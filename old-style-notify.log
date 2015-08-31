@@ -1,0 +1,27 @@
+-----> Starting Kitchen (v1.4.2)
+-----> Converging <default-ubuntu-1404>...
+       Preparing files for transfer
+       Preparing dna.json
+       Preparing current project directory as a cookbook
+       Removing non-cookbook files before transfer
+       Preparing solo.rb
+-----> Chef Omnibus installation detected (install only if missing)
+       Transferring files to <default-ubuntu-1404>
+       Starting Chef Client, version 12.4.1
+       Compiling Cookbooks...
+       Converging 3 resources
+       Recipe: dummy::default
+         * service[ssh] action nothing (skipped due to action :nothing)
+         * file[/var/hoge] action create
+           - create new file /var/hoge
+         * file[/var/hoge2] action create
+           - create new file /var/hoge2
+         * service[ssh] action restart
+           - restart service service[ssh]
+       
+       Running handlers:
+       Running handlers complete
+       Chef Client finished, 3/3 resources updated in 6.299569898 seconds
+       Finished converging <default-ubuntu-1404> (0m8.17s).
+-----> Kitchen is finished. (0m8.57s)
+zlib(finalizer): the stream was freed prematurely.
