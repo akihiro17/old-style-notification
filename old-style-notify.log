@@ -1,11 +1,82 @@
 -----> Starting Kitchen (v1.4.2)
+-----> Cleaning up any prior instances of <default-ubuntu-1404>
+-----> Destroying <default-ubuntu-1404>...
+       Finished destroying <default-ubuntu-1404> (0m0.00s).
+-----> Testing <default-ubuntu-1404>
+-----> Creating <default-ubuntu-1404>...
+       The following plugins were installed with a version of Vagrant
+       that had different versions of underlying components. Because
+       these component versions were changed (which rarely happens),
+       the plugins must be uninstalled and reinstalled.
+       
+       To ensure that all the dependencies are properly updated as well
+       it is _highly recommended_ to do a `vagrant plugin uninstall`
+       prior to reinstalling.
+       
+       This message will not go away until all the plugins below are
+       either uninstalled or uninstalled then reinstalled.
+       
+       The plugins below will not be loaded until they're uninstalled
+       and reinstalled:
+       
+       sahara, vagrant-omnibus, vagrant-serverspec
+       Bringing machine 'default' up with 'virtualbox' provider...
+       [default] Importing base box 'opscode-ubuntu-14.04'...
+       Progress: 10%Progress: 20%Progress: 30%Progress: 40%Progress: 50%Progress: 60%Progress: 70%Progress: 80%Progress: 90%[default] Matching MAC address for NAT networking...
+       [default] Setting the name of the VM...
+       [default] Clearing any previously set forwarded ports...
+       [default] Clearing any previously set network interfaces...
+       [default] Preparing network interfaces based on configuration...
+       [default] Forwarding ports...
+       [default] -- 22 => 2222 (adapter 1)
+       [default] Booting VM...
+       [default] Waiting for machine to boot. This may take a few minutes...
+       [default] Machine booted and ready!
+       [default] Setting hostname...
+       [SSH] Established
+       Vagrant instance <default-ubuntu-1404> created.
+       Finished creating <default-ubuntu-1404> (0m53.02s).
 -----> Converging <default-ubuntu-1404>...
        Preparing files for transfer
        Preparing dna.json
        Preparing current project directory as a cookbook
        Removing non-cookbook files before transfer
        Preparing solo.rb
------> Chef Omnibus installation detected (install only if missing)
+-----> Installing Chef Omnibus (install only if missing)
+       Downloading https://www.chef.io/chef/install.sh to file /tmp/install.sh
+       Trying wget...
+       Download complete.
+       Downloading Chef  for ubuntu...
+       downloading https://www.chef.io/chef/metadata?v=&prerelease=false&nightlies=false&p=ubuntu&pv=14.04&m=x86_64
+         to file /tmp/install.sh.1288/metadata.txt
+       trying wget...
+       url	https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/10.04/x86_64/chef_12.4.1-1_amd64.deb
+       md5	6229586196a433b0ddf8f72cd4e85533
+       sha256	bb2bdaa0c551fff21ccdf37dab75fc71374b521c419f1af51d1eab3ea2c791ba
+       downloaded metadata file looks valid...
+       downloading https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/10.04/x86_64/chef_12.4.1-1_amd64.deb
+         to file /tmp/install.sh.1288/chef_12.4.1-1_amd64.deb
+       trying wget...
+       Comparing checksum with sha256sum...
+       
+       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+       
+       You are installing an omnibus package without a version pin.  If you are installing
+       on production servers via an automated process this is DANGEROUS and you will
+       be upgraded without warning on new releases, even to new major releases.
+       Letting the version float is only appropriate in desktop, test, development or
+       CI/CD environments.
+       
+       WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
+       
+       Installing Chef 
+       installing with dpkg...
+       Selecting previously unselected package chef.
+       (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 32352 files and directories currently installed.)
+       Preparing to unpack .../chef_12.4.1-1_amd64.deb ...
+       Unpacking chef (12.4.1-1) ...
+       Setting up chef (12.4.1-1) ...
+       Thank you for installing Chef!
        Transferring files to <default-ubuntu-1404>
        Starting Chef Client, version 12.4.1
        Compiling Cookbooks...
@@ -21,7 +92,34 @@
        
        Running handlers:
        Running handlers complete
-       Chef Client finished, 3/3 resources updated in 6.299569898 seconds
-       Finished converging <default-ubuntu-1404> (0m8.17s).
------> Kitchen is finished. (0m8.57s)
-zlib(finalizer): the stream was freed prematurely.
+       Chef Client finished, 3/3 resources updated in 7.146637455 seconds
+       Finished converging <default-ubuntu-1404> (1m13.10s).
+-----> Setting up <default-ubuntu-1404>...
+       Finished setting up <default-ubuntu-1404> (0m0.00s).
+-----> Verifying <default-ubuntu-1404>...
+       Preparing files for transfer
+       Transferring files to <default-ubuntu-1404>
+       Finished verifying <default-ubuntu-1404> (0m0.00s).
+-----> Destroying <default-ubuntu-1404>...
+       The following plugins were installed with a version of Vagrant
+       that had different versions of underlying components. Because
+       these component versions were changed (which rarely happens),
+       the plugins must be uninstalled and reinstalled.
+       
+       To ensure that all the dependencies are properly updated as well
+       it is _highly recommended_ to do a `vagrant plugin uninstall`
+       prior to reinstalling.
+       
+       This message will not go away until all the plugins below are
+       either uninstalled or uninstalled then reinstalled.
+       
+       The plugins below will not be loaded until they're uninstalled
+       and reinstalled:
+       
+       sahara, vagrant-omnibus, vagrant-serverspec
+       [default] Forcing shutdown of VM...
+       [default] Destroying VM and associated drives...
+       Vagrant instance <default-ubuntu-1404> destroyed.
+       Finished destroying <default-ubuntu-1404> (0m3.52s).
+       Finished testing <default-ubuntu-1404> (2m9.73s).
+-----> Kitchen is finished. (2m10.40s)
